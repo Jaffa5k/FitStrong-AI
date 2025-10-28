@@ -106,7 +106,7 @@ export default function FitStrongAI() {
     setOnboardingStep(0)
   }
 
-  const handleOnboardingNext = () => {
+  const handleOnboardingNext = (steps) => {
     if (onboardingStep < steps.length - 1) {
       setOnboardingStep(onboardingStep + 1)
     } else {
@@ -402,11 +402,11 @@ export default function FitStrongAI() {
 
           {/* Step Content */}
           <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-8">{steps[onboardingStep].title}</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">{steps[onboardingStep].title ?? "Carregando..."}</h2>
             {steps[onboardingStep].component}
             
             <button
-              onClick={handleOnboardingNext}
+              onClick={() => handleOnboardingNext(steps)}
               className="w-full mt-8 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-2xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all"
             >
               {onboardingStep === steps.length - 1 ? 'Gerar Meu Plano' : 'Continuar'}
