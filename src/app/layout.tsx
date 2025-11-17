@@ -33,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <script src="https://www.paypal.com/sdk/js?client-id=AfP-VYt-4BwUS0JRBL7951vdgcvKlmHuGqyHilkwjbX6eOTnKW1WoDwOEXk-vFqlJn-YrXTpm7oDHoDd&components=funding-eligibility"></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-geist-sans`}
       >
